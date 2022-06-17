@@ -1,0 +1,10 @@
+
+<%= render @entry %>
+
+<div>
+  <%= link_to "Editar", edit_entry_path(@entry) %> |
+  <%= link_to "Refeições", entries_path %>
+
+  <%= button_to "Deletar", @entry, method: :delete %>
+</div>
+
