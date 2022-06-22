@@ -1,10 +1,45 @@
 
-<%= render @entry %>
+<% content_for :title do %>
+	<%= @entry.meal_type %> &ndash; <%= Time.now.strftime("%d-%m-%Y") %>
+<% end %>
 
-<div>
-  <%= link_to "Editar", edit_entry_path(@entry) %> |
-  <%= link_to "Refeições", entries_path %>
+<%= params %>
 
-  <%= button_to "Deletar", @entry, method: :delete %>
+<div class="columns mt-6 is-centered">
+	<div class="column is-one-third">
+		<nav class="panel is-link">
+			<p class="panel-heading">
+				<%= @entry.meal_type %>
+			</p>
+
+			<div class="panel-block">
+				Calorias: <%= @entry.calories %>
+			</div>
+
+			<div class="panel-block">
+				Proteinas: <%= @entry.proteins %>
+			</div>
+
+			<div class="panel-block">
+				Carboidratos: <%= @entry.carbohydrates %>
+			</div>
+
+			<div class="panel-block">
+				Gorduras: <%= @entry.fats %>
+			</div>
+		</nav>
+
+		<div class="columns is-mobile">
+			<div class="column">
+				 <%= link_to "Editar", edit_entry_path(@entry), class: "button is-gray" %>
+				 <%= link_to "Deletar", entry_path(@entry),class: "button is-gray", data: { turbo_method: :delete, turbo_confirm: "Tem certeza?"} %>
+			</div>
+			<div class="column">
+				<!-- -->
+			</div>
+		</div>
+	</div>
 </div>
+
+
 

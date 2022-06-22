@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only: %i[ show edit update destroy ]
+  before_action :set_entry, only: [ :show, :edit, :update, :destroy ]
 
   # GET /entries or /entries.json
   def index
@@ -8,6 +8,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/1 or /entries/1.json
   def show
+
   end
 
   # GET /entries/new
