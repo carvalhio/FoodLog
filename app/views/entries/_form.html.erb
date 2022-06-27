@@ -14,29 +14,36 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="field">
     <%= form.label :Tipo_de_refeição, class:"label" %>
     <%= form.text_field :meal_type, class: "input" %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :Calorias, class:"label" %>
     <%= form.number_field :calories, class: "input" %>
   </div>
 
-  <div>
-    <%= form.label :Proteinas, class:"label" %>
+  <div class="field">
+    <%= form.label :Proteínas, class:"label" %>
     <%= form.number_field :proteins, class: "input" %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :Carboidratos, class:"label" %>
     <%= form.number_field :carbohydrates, class: "input" %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :Gorduras, class:"label" %>
     <%= form.number_field :fats, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Categoria, class:"label" %>
+    <div class="select">
+      <%= form.select :category_id, Category.all.collect { |u| [u.title, u.id]} %>
+    </div>
   </div>
 
   <div>

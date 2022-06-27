@@ -3,13 +3,12 @@
 	<%= @entry.meal_type %> &ndash; <%= Time.now.strftime("%d-%m-%Y") %>
 <% end %>
 
-<%= params %>
-
 <div class="columns mt-6 is-centered">
 	<div class="column is-one-third">
-		<nav class="panel is-link">
+		<nav class="panel is-primary">
 			<p class="panel-heading">
-				<%= @entry.meal_type %>
+				<%= @entry.meal_type %> :
+				<%= @entry.category.title %>
 			</p>
 
 			<div class="panel-block">
@@ -17,7 +16,7 @@
 			</div>
 
 			<div class="panel-block">
-				Proteinas: <%= @entry.proteins %>
+				Proteínas: <%= @entry.proteins %>
 			</div>
 
 			<div class="panel-block">
